@@ -1,5 +1,5 @@
 import React from 'react';
-import { useInView } from "react-intersection-observer";
+import { useInView } from 'react-intersection-observer';
 import Intro from './components/Intro';
 import Body from './components/Body';
 import Square from './components/Square';
@@ -8,25 +8,46 @@ import About1 from './components/About1';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Decos from './components/Decos';
+import RotatingSquares from './components/RotatingSquares';
 
 function App() {
-    const { ref: introRef, inView: introIsVisible } = useInView();   
+    const { ref: introRef, inView: introIsVisible } = useInView({ threshold: 0.5 });
+    const { ref: aboutRef, inView: aboutIsVisible } = useInView({ threshold: 0.5 });
+    const { ref: about1Ref, inView: about1IsVisible } = useInView({ threshold: 0.5 });
+    const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 });
+    const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0.5 });
+
     return (
         <div className="App h-screen overflow-y-auto">
             <div className="relative flex h-screen">
-                <div ref = {introRef} className="flex-grow-0 flex-shrink-0 basis-4/6 bg-richgray h-full">
+                <div ref={introRef} className="flex-grow-0 flex-shrink-0 basis-4/6 bg-richgray h-full">
                     <Intro />
                     <Body />
-                    <Decos/>
-                    <Square/>
+                    <Decos />
+                    <Square />
                 </div>
                 <div className="flex-grow-0 flex-shrink-0 basis-2/6 bg-neonic h-full">
                 </div>
             </div>
-            <About />
-            <About1 />
-            <Projects />
-            <Contact />
+            <div ref={aboutRef}>
+                <About />
+            </div>
+            <div ref={about1Ref}>
+                <About1 />
+            </div>
+            <div ref={projectsRef}>
+                <Projects />
+            </div>
+            <div ref={contactRef}>
+                <Contact />
+            </div>
+            <RotatingSquares
+                introIsVisible={introIsVisible}
+                aboutIsVisible={aboutIsVisible}
+                about1IsVisible={about1IsVisible}
+                projectsIsVisible={projectsIsVisible}
+                contactIsVisible={contactIsVisible}
+            />
         </div>
     );
 }
