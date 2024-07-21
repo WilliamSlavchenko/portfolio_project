@@ -1,7 +1,7 @@
 import React from 'react';
 import { useInView } from 'react-intersection-observer';
 import Intro from './components/Intro';
-import Body from './components/Body';
+import Introtext from './components/Introtext';
 import Square from './components/Square';
 import About from './components/About';
 import About1 from './components/About1';
@@ -9,6 +9,7 @@ import Projects from './components/Projects';
 import Contact from './components/Contact';
 import Decos from './components/Decos';
 import RotatingSquares from './components/RotatingSquares';
+import Reveal from './components/Reveal'; // Import the Reveal component
 
 function App() {
     const { ref: introRef, inView: introIsVisible } = useInView({ threshold: 0.5 });
@@ -24,25 +25,33 @@ function App() {
             <div className="relative flex h-screen">
                 <div ref={introRef} className="flex-grow-0 flex-shrink-0 basis-4/6 bg-richgray h-full">
                     <Intro bodyIsVisible={bodyIsVisible} />
-                    <Body ref={bodyRef} />
+                    <Introtext ref={bodyRef} />
                     <Decos />
                     <Square />
                 </div>
                 <div className="flex-grow-0 flex-shrink-0 basis-2/6 bg-neonic h-full">
                 </div>
             </div>
-            <div ref={aboutRef}>
-                <About />
-            </div>
-            <div ref={about1Ref}>
-                <About1 />
-            </div>
-            <div ref={projectsRef}>
-                <Projects />
-            </div>
-            <div ref={contactRef}>
-                <Contact />
-            </div>
+            <Reveal>
+                <div ref={aboutRef}>
+                    <About />
+                </div>
+            </Reveal>
+            <Reveal>
+                <div ref={about1Ref}>
+                    <About1 />
+                </div>
+            </Reveal>
+            <Reveal>
+                <div ref={projectsRef}>
+                    <Projects />
+                </div>
+            </Reveal>
+            <Reveal>
+                <div ref={contactRef}>
+                    <Contact />
+                </div>
+            </Reveal>
             <RotatingSquares
                 introIsVisible={introIsVisible}
                 aboutIsVisible={aboutIsVisible}
