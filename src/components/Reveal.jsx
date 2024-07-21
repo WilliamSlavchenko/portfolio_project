@@ -5,7 +5,7 @@ import { useInView } from 'react-intersection-observer';
 
 const Reveal = ({ children }) => {
     const controls = useAnimation();
-    const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true }); // triggerOnce makes sure it triggers only once
+    const [ref, inView] = useInView({ threshold: 0.1, triggerOnce: true });
     const [hasBeenInView, setHasBeenInView] = useState(false);
 
     useEffect(() => {
@@ -15,21 +15,23 @@ const Reveal = ({ children }) => {
         }
     }, [controls, inView, hasBeenInView]);
 
-    const variants = {
+    const sectionVariants = {
         hidden: { opacity: 0, y: 50 },
         visible: { opacity: 1, y: 0 }
     };
 
     return (
-        <motion.div
-            ref={ref}
-            animate={controls}
-            initial="hidden"
-            variants={variants}
-            transition={{ duration: 0.5 }}
-        >
-            {children}
-        </motion.div>
+        <div ref={ref}>
+            <motion.div
+                animate={controls}
+                initial="hidden"
+                variants={sectionVariants}
+                transition={{ duration: 1 }}
+                className="relative overflow-hidden"
+            >
+                {children}
+            </motion.div>
+        </div>
     );
 };
 

@@ -17,7 +17,6 @@ function App() {
     const { ref: about1Ref, inView: about1IsVisible } = useInView({ threshold: 0.5 });
     const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 });
     const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0.5 });
-
     const { ref: bodyRef, inView: bodyIsVisible } = useInView({ threshold: 0.5 });
 
     return (
@@ -25,12 +24,13 @@ function App() {
             <div className="relative flex h-screen">
                 <div ref={introRef} className="flex-grow-0 flex-shrink-0 basis-4/6 bg-richgray h-full">
                     <Intro bodyIsVisible={bodyIsVisible} />
-                    <Introtext ref={bodyRef} />
+                    <div ref={bodyRef}>
+                        <Introtext />
+                    </div>
                     <Decos />
                     <Square />
                 </div>
-                <div className="flex-grow-0 flex-shrink-0 basis-2/6 bg-neonic h-full">
-                </div>
+                <div className="flex-grow-0 flex-shrink-0 basis-2/6 bg-neonic h-full"></div>
             </div>
             <Reveal>
                 <div ref={aboutRef}>
