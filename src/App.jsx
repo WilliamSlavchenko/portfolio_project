@@ -17,12 +17,14 @@ function App() {
     const { ref: projectsRef, inView: projectsIsVisible } = useInView({ threshold: 0.5 });
     const { ref: contactRef, inView: contactIsVisible } = useInView({ threshold: 0.5 });
 
+    const { ref: bodyRef, inView: bodyIsVisible } = useInView({ threshold: 0.5 });
+
     return (
         <div className="App h-screen overflow-y-auto">
             <div className="relative flex h-screen">
                 <div ref={introRef} className="flex-grow-0 flex-shrink-0 basis-4/6 bg-richgray h-full">
-                    <Intro />
-                    <Body />
+                    <Intro bodyIsVisible={bodyIsVisible} />
+                    <Body ref={bodyRef} />
                     <Decos />
                     <Square />
                 </div>

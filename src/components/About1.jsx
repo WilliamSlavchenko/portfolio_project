@@ -5,14 +5,13 @@ function About1() {
         <div className="h-screen flex items-center justify-center bg-richgray">
             <div className="flex flex-col mb-[250px]">
                 <p className="text-5xl font-medium mt-[6rem] mb-5 ml-[80px] text-neonic">Over the<br/> years,</p>
-                <p className="text-sm max-w-xl mb-6 ml-[80px] font-bold text-white">I've built products for companies and businesses around the globe ranging from marketing websites to complex solutions and enterprise apps with focus on fast, elegant and accessible user experiences.<br/>
-Currently, I work at Shopify as a Senior Frontend Engineer crafting thoughtful and inclusive experiences that adhere to web standards for over 3 million merchants across the world.<br/>
-Before now, I was Principal Frontend Engineer at hellotax, where I worked on a suite of tools and services tailored towards automated VAT compliance for multi-channel sellers in Europe.<br/>
-Prior to hellotax, I was Senior frontend engineering consultant with Pixel2HTML, building JavaScript applications and interfaces for orgs and individuals.<br/>
-I once also led the frontend team at Conectar, an e-learning startup through building multiple React applications into a single robust learning platform.</p>
+                <p className="text-sm max-w-xl mb-6 ml-[80px] font-bold text-white">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Repellendus inventore id ad esse odit ex enim ut voluptatum unde quo quod veniam accusamus quos culpa alias rem veritatis, maxime non!<br/>
+Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatem molestias libero, ipsam fugiat facere, odio earum repellat sapiente incidunt excepturi obcaecati hic minima, voluptates exercitationem suscipit eveniet! Quisquam, minus. Voluptates?<br/>
+Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, nulla autem! Suscipit modi, voluptates reiciendis harum ex aperiam sunt placeat. Voluptatem perspiciatis aut atque exercitationem officia architecto incidunt laborum quaerat?<br/>
+Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium facilis optio, iure ea non dolor deleniti ratione quos cum dolores dolorem ab in libero molestiae. Earum, vitae quod? Aut, nulla!</p>
             </div>
             <div className="flex flex-col mt-[250px]">
-                <p className="text-6xl font-medium ml-[80px] text-white">Cringe corporate <br/>art <br/>that vaguely looks<br/> like me</p>
+                <img className="mb-[160px] w-[600px] h-[600px]" src="src/file.png" alt="" />
             </div>
         </div>
     );
